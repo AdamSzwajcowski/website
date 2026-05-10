@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Repertuar Zespołu</title>
+    <!-- Pobranie biblioteki PapaParse do czytania CSV -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 20px auto; padding: 0 20px; }
+        .filters { display: flex; gap: 20px; margin-bottom: 20px; background: #f5f5f5; padding: 15px; border-radius: 8px; flex-wrap: wrap; }
+        .filter-group { display: flex; flex-direction: column; gap: 5px; min-width: 150px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #eee; }
+        .loading { font-style: italic; color: #666; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <h1>Repertuar Zespołu</h1>
+
+    <div class="filters">
+        <div class="filter-group">
+            <label>Wokalistka:</label>
+            <select id="filter-voc">
+                <option value="all">Wszystkie</option>
+                <option value="Sara">Sara</option>
+                <option value="Dominika">Dominika</option>
+                <option value="Ania">Ania</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label>Język:</label>
+            <select id="filter-lang">
+                <option value="all">Wszystkie</option>
+                <option value="PL">Tylko polskie</option>
+                <option value="EN">Tylko zagraniczne</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label>Piosenki świąteczne:</label>
+            <select id="filter-xmas">
+                <option value="include">Uwzględnij</option>
+                <option value="exclude">Ukryj świąteczne</option>
+                <option value="only">Tylko świąteczne</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="loading-msg" class="loading">Pobieranie najnowszego repertuaru...</div>
+
+    <table id="repertoire-table" style="display: none;">
+        <thead>
+            <tr>
+                <th>Tytuł</th>
+                <th>Artysta</th>
+            </tr>
+        </thead>
+        <tbody id="song-list">
+            <!-- Tutaj wpadną piosenki -->
+        </tbody>
+    </table>
+
+    <script>
+        // TUTAJ WKLEJ SKOPIOWANY LINK Z GOOGLE SHEETS
+        const publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vReh5S09MVyIzTJrv6Dx5vqcFoY1tcCZFTpjd9yyyqr1RLMVef7UWzbpjnMyV9Jb8JzTgUx8--EDsiK/pub?gid=1914338396&single=true&output=csv';
+        
+        let allSongs = [];
+
+        // Inicjalizacja pobierania danych
+        Papa.parse(publicSpreadsheetUrl, {
+            download: true,
+            header: true,
+            skipEmptyLines: true,
+            complete: function(results) {
+                // Ta funkcja uruchamia się, gdy dane zostaną pobrane
+                processData(results.data);
+                document.getElementById('loading-msg').style.display = 'none';
+                document.getElementById('repertoire-table').style.display = 'table';
+                renderTable();
+            },
+            error: function(err) {
+                document.getElementById('loading-msg').innerText = "Wystąpił błąd podczas pobierania danych.";
+                console.error("Błąd PapaParse:", err);
+            }
+        });
+
+        // Funkcja przetwarzająca surowe dane z CSV do sensownej formy
+        function processData(rawData) {
+            allSongs = rawData.map(row => {
+                // Sprawdzamy wokalistki
+                let vocalists = [];
+                ['Sara', 'Dominika', 'Ania'].forEach(voc => {
+                    let val = row[voc] ? row[voc].trim() : '';
+                    if (val && val !== '-') {
+                        vocalists.push(voc);
+                    }
+                });
+
+                // Sprawdzamy języki
+                let langRaw = row['język'] ? row['język'].trim() : '';
+                let langs = langRaw ? langRaw.split('/') : [];
+
+                // Sprawdzamy święta
+                let xmasRaw = row['🎄'] ? row['🎄'].trim() : '0';
+                let isXmas = (xmasRaw === '1');
+
+                return {
+                    title: row['Tytuł'] ? row['Tytuł'].trim() : '',
+                    artist: row['Artysta'] ? row['Artysta'].trim() : '',
+                    langs: langs,
+                    isXmas: isXmas,
+                    vocalists: vocalists
+                };
+            }).filter(song => song.title !== ''); // Usuwamy ewentualne puste wiersze
+        }
+
+        // Nasłuchiwanie zmian w filtrach
+        document.getElementById('filter-voc').addEventListener('change', renderTable);
+        document.getElementById('filter-lang').addEventListener('change', renderTable);
+        document.getElementById('filter-xmas').addEventListener('change', renderTable);
+
+        // Renderowanie tabeli
+        function renderTable() {
+            const vocFilter = document.getElementById('filter-voc').value;
+            const langFilter = document.getElementById('filter-lang').value;
+            const xmasFilter = document.getElementById('filter-xmas').value;
+
+            const tableBody = document.getElementById('song-list');
+            tableBody.innerHTML = ''; // Czyszczenie tabeli
+
+            const filteredSongs = allSongs.filter(song => {
+                // 1. Filtr wokalistki
+                if (vocFilter !== 'all' && !song.vocalists.includes(vocFilter)) return false;
+
+                // 2. Filtr języka
+                if (langFilter !== 'all') {
+                    if (langFilter === 'PL' && !song.langs.includes('PL')) return false;
+                    if (langFilter === 'EN' && !song.langs.includes('EN')) return false;
+                }
+
+                // 3. Filtr świąteczny
+                if (xmasFilter === 'exclude' && song.isXmas) return false;
+                if (xmasFilter === 'only' && !song.isXmas) return false;
+
+                return true;
+            });
+
+            // Wstawianie wierszy do tabeli
+            filteredSongs.forEach(song => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${song.title}</td>
+                    <td>${song.artist}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
+    </script>
+</body>
+</html>

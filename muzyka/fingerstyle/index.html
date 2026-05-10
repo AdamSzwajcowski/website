@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adam Szwajcowski | Fingerstyle i YouTube</title>
+  <link rel="stylesheet" href="../../css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="../../js/table-scroll-dual.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">Adam Szwajcowski</a>
+      </div>
+      <nav class="main-nav">
+        <a href="../../index.html">Start</a>
+        <a href="../index.html" class="active">Muzyka</a>
+        <a href="../../it/index.html">Nauka i IT</a>
+        <a href="../../kontakt/index.html">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page page-flow">
+    <div class="container">
+      <section class="page-intro page-intro--tight page-intro--fingerstyle">
+        <h1>Fingerstyle i YouTube</h1>
+        <p class="lead">
+          Przez lata wypracowałem własny styl gry na gitarze solo, czerpiąc z fingerstyle’u i z gry
+          klasycznej. Sam aranżuję utwory, które wykonuję, a nagrania publikuję głównie na
+          <a
+            class="inline-link"
+            href="https://www.youtube.com/@adamszwajcowski"
+            target="_blank"
+            rel="noopener noreferrer"
+            >kanale YouTube</a
+          >, gdzie doczekały się setek tysięcy wyświetleń.
+        </p>
+        <p>
+          Poza działalnością internetową chętnie gram na żywo, m.in. na ślubach cywilnych
+          i wydarzeniach firmowych — więcej w zakładce
+          <a class="inline-link" href="../na-zywo/index.html">Muzyka na żywo</a> - znajduje
+          się tam również pełny repertuar solowy, uwzględniający także utwory, które nie doczekały
+          się nagrań na YouTube.
+        </p>
+      </section>
+
+      <section class="flow-section">
+        <h2>Repertuar</h2>
+        <p>
+          Lista utworów z materiałami online. Jeśli dla danego utworu nie ma linku do nut,
+          oznacza to, że nie mam ich spisanych. Nuty sprzedaję legalnie za pośrednictwem strony
+          musicnotes.com, jednak czasem, gdy są problemy z licencją, udostępniam je w formie PDF.
+        </p>
+        <p>
+          W przypadku znalezienia błędów w nutach, proszę o
+          <a class="inline-link" href="../../kontakt/index.html">kontakt</a>
+          — jeśli rzeczywiście jest coś nie tak, to poprawię i podeślę nową wersję.
+        </p>
+
+        <input
+          type="search"
+          id="fingerstyle-repertoire-search"
+          class="repertoire-search"
+          placeholder="Szukaj po tytule, artyście lub pochodzeniu…"
+          autocomplete="off"
+          aria-label="Szukaj w repertuarze fingerstyle"
+        />
+
+        <p id="fingerstyle-repertoire-loading" class="repertoire-loading">Pobieranie repertuaru…</p>
+
+        <div class="table-scroll">
+          <table class="data-table data-table--fingerstyle" id="fingerstyle-repertoire-table" hidden>
+            <thead>
+              <tr>
+                <th scope="col">Tytuł</th>
+                <th scope="col">Artysta</th>
+                <th scope="col">Skąd znane</th>
+                <th scope="col">Nagranie</th>
+                <th scope="col">Nuty</th>
+              </tr>
+            </thead>
+            <tbody id="fingerstyle-repertoire-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      const CSV_URL =
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vReh5S09MVyIzTJrv6Dx5vqcFoY1tcCZFTpjd9yyyqr1RLMVef7UWzbpjnMyV9Jb8JzTgUx8--EDsiK/pub?gid=1845498032&single=true&output=csv";
+
+      const searchInput = document.getElementById("fingerstyle-repertoire-search");
+      const loadingEl = document.getElementById("fingerstyle-repertoire-loading");
+      const tableEl = document.getElementById("fingerstyle-repertoire-table");
+      const tbodyEl = document.getElementById("fingerstyle-repertoire-body");
+
+      let songs = [];
+
+      function processData(rawData) {
+        songs = rawData
+          .map(function (row) {
+            const ytCell = row["YouTube"] ? String(row["YouTube"]).trim() : "";
+            const ytLink = ytCell && ytCell !== "-" ? ytCell : null;
+            const notesCell = row["nuty"] ? String(row["nuty"]).trim() : "";
+            const notesLink = notesCell && notesCell !== "-" ? notesCell : null;
+
+            return {
+              title: row["Tytuł"] ? String(row["Tytuł"]).trim() : "",
+              artist: row["Artysta"] ? String(row["Artysta"]).trim() : "",
+              origin: row["Skąd znane"] ? String(row["Skąd znane"]).trim() : "",
+              ytLink: ytLink,
+              notesLink: notesLink,
+            };
+          })
+          .filter(function (song) {
+            return song.title !== "" && song.ytLink !== null;
+          });
+      }
+
+      function renderTable() {
+        const q = searchInput.value.trim().toLowerCase();
+
+        const filtered = songs.filter(function (song) {
+          if (!q) return true;
+          return (
+            song.title.toLowerCase().indexOf(q) !== -1 ||
+            song.artist.toLowerCase().indexOf(q) !== -1 ||
+            song.origin.toLowerCase().indexOf(q) !== -1
+          );
+        });
+
+        tbodyEl.textContent = "";
+        filtered.forEach(function (song) {
+          const tr = document.createElement("tr");
+
+          const tdTitle = document.createElement("td");
+          const strong = document.createElement("strong");
+          strong.textContent = song.title;
+          tdTitle.appendChild(strong);
+
+          const tdArtist = document.createElement("td");
+          tdArtist.textContent = song.artist;
+
+          const tdOrigin = document.createElement("td");
+          tdOrigin.className = "repertoire-origin";
+          tdOrigin.textContent = song.origin;
+
+          const tdRec = document.createElement("td");
+          const aYt = document.createElement("a");
+          aYt.href = song.ytLink;
+          aYt.className = "repertoire-link-yt";
+          aYt.target = "_blank";
+          aYt.rel = "noopener noreferrer";
+          aYt.textContent = "▶ YouTube";
+          tdRec.appendChild(aYt);
+
+          const tdNotes = document.createElement("td");
+          if (song.notesLink) {
+            const aNotes = document.createElement("a");
+            aNotes.href = song.notesLink;
+            aNotes.className = "repertoire-link-notes";
+            aNotes.target = "_blank";
+            aNotes.rel = "noopener noreferrer";
+            aNotes.textContent = "🎼 Nuty";
+            tdNotes.appendChild(aNotes);
+          }
+
+          tr.appendChild(tdTitle);
+          tr.appendChild(tdArtist);
+          tr.appendChild(tdOrigin);
+          tr.appendChild(tdRec);
+          tr.appendChild(tdNotes);
+          tbodyEl.appendChild(tr);
+        });
+      }
+
+      searchInput.addEventListener("input", renderTable);
+
+      if (typeof Papa === "undefined") {
+        loadingEl.textContent = "Nie udało się załadować modułu do odczytu tabeli. Odśwież stronę.";
+      } else {
+        Papa.parse(CSV_URL, {
+          download: true,
+          header: true,
+          skipEmptyLines: true,
+          complete: function (results) {
+            try {
+              processData(results.data);
+              loadingEl.style.display = "none";
+              tableEl.hidden = false;
+              renderTable();
+            } catch (err) {
+              loadingEl.textContent = "Błąd podczas przetwarzania repertuaru.";
+              console.error(err);
+            }
+          },
+          error: function (err) {
+            loadingEl.textContent = "Wystąpił błąd podczas pobierania danych.";
+            console.error("Błąd PapaParse:", err);
+          },
+        });
+      }
+    })();
+  </script>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer-text">
+        © 2026 Adam Szwajcowski ·
+        <a class="inline-link" href="../../kontakt/index.html">Kontakt</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

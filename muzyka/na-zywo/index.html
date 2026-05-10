@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adam Szwajcowski | Na żywo</title>
+  <link rel="stylesheet" href="../../css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+  <script src="../../js/table-scroll-dual.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <a href="../../index.html">Adam Szwajcowski</a>
+      </div>
+      <nav class="main-nav">
+        <a href="../../index.html">Start</a>
+        <a href="../index.html" class="active">Muzyka</a>
+        <a href="../../it/index.html">Nauka i IT</a>
+        <a href="../../kontakt/index.html">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page page-flow">
+    <div class="container">
+      <section class="page-intro page-intro--tight page-intro--na-zywo">
+        <h1>Muzyka na żywo</h1>
+        <div class="na-zywo-intro-layout">
+          <div class="na-zywo-intro-copy">
+            <p class="lead">
+              Od kilku lat świadczę usługi muzyki na żywo. Obejmują one zarówno moją grę solową
+              (zobacz zakładkę <a class="inline-link" href="../fingerstyle/index.html">Fingerstyle</a>),
+              jak i występy w duetach akustycznych z wokalistkami. Akompaniuję głównie na gitarze, ale do krótszych
+              występów możliwa jest również opcja występu z pianinem.
+            </p>
+            <p>
+              Dysponuję profesjonalnym nagłośnieniem odpowiednim zarówno do przestrzeni zamkniętych,
+              jak i imprez plenerowych do ok.&nbsp;100 osób. Prowadzę zarejestrowaną działalność gospodarczą
+              i mogę wystawiać faktury. Stacjonuję w Krakowie, ale jestem mobilny.
+            </p>
+            <p>
+              Dzięki szerokiemu repertuarowi jesteśmy w stanie dopasować się do różnych okazji, takich jak bankiety
+              firmowe,
+              <a
+                class="inline-link"
+                href="https://www.weselezklasa.pl/ogloszenia-weselne/adam-szwajcowski,58624/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >śluby cywilne</a
+              >, imprezy okolicznościowe czy cykliczne występy w hotelach i restauracjach. Szczególnie polecam
+              połączenie gry solowej z duetem — dobrze balansuje delikatną muzyką w tle z wyraźniejszą atrakcją
+              w programie wydarzenia.
+            </p>
+            <p>
+              Po szczegóły dotyczące konkretnej oferty zapraszam do
+              <a class="inline-link" href="../../kontakt/index.html">kontaktu</a>.
+            </p>
+          </div>
+
+          <div
+            class="na-zywo-gallery"
+            data-na-zywo-gallery
+            role="region"
+            aria-roledescription="Karuzela"
+            aria-label="Zdjęcia z występów"
+            tabindex="0"
+          >
+            <div class="na-zywo-gallery-viewport">
+              <button
+                type="button"
+                class="na-zywo-gallery-nav na-zywo-gallery-nav--prev"
+                aria-label="Poprzednie zdjęcie"
+              >
+                ‹
+              </button>
+              <div class="na-zywo-gallery-slides" id="na-zywo-gallery-slides">
+                <figure class="na-zywo-gallery-slide">
+                  <img
+                    src="../../assets/foto1.jpg"
+                    alt="Muzyka na żywo, zdjęcie 1 z 3"
+                    width="900"
+                    height="1200"
+                    decoding="async"
+                    fetchpriority="high"
+                  />
+                </figure>
+                <figure class="na-zywo-gallery-slide">
+                  <img
+                    src="../../assets/foto2.jpg"
+                    alt="Muzyka na żywo, zdjęcie 2 z 3"
+                    width="900"
+                    height="1200"
+                    decoding="async"
+                    loading="lazy"
+                  />
+                </figure>
+                <figure class="na-zywo-gallery-slide">
+                  <img
+                    src="../../assets/foto3.jpg"
+                    alt="Muzyka na żywo, zdjęcie 3 z 3"
+                    width="900"
+                    height="1200"
+                    decoding="async"
+                    loading="lazy"
+                  />
+                </figure>
+              </div>
+              <button
+                type="button"
+                class="na-zywo-gallery-nav na-zywo-gallery-nav--next"
+                aria-label="Następne zdjęcie"
+              >
+                ›
+              </button>
+            </div>
+            <div class="na-zywo-gallery-dots" role="tablist" aria-label="Wybór zdjęcia">
+              <button type="button" class="na-zywo-gallery-dot" role="tab" aria-selected="true" aria-label="Zdjęcie 1"></button>
+              <button type="button" class="na-zywo-gallery-dot" role="tab" aria-selected="false" aria-label="Zdjęcie 2"></button>
+              <button type="button" class="na-zywo-gallery-dot" role="tab" aria-selected="false" aria-label="Zdjęcie 3"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="flow-section">
+        <h2>Wokalistki</h2>
+
+        <details class="disclosure">
+          <summary class="disclosure-summary">Dominika Guzek</summary>
+          <div class="disclosure-body">
+            <div class="disclosure-split">
+              <figure class="media-placeholder">
+                <span>Zdjęcie — do dodania</span>
+              </figure>
+              <div class="disclosure-text">
+                <p>
+                  Aktorka musicalowa, wokalistka, absolwentka Akademii Sztuk Teatralnych w Krakowie
+                  na wydziale wokalno-aktorskim. Brała udział m.in. w programach „Szansa na sukces”,
+                  „Talent za talent” oraz w Konkursie Eurowizji dla Dzieci. Zagrała w wielu musicalach
+                  i spektaklach muzycznych w Polsce, występując na deskach m.in. Teatru Rozrywki w Chorzowie,
+                  Teatru Syrena czy Teatru Muzycznego Roma w Warszawie. Obecnie jest aktorką Teatru Groteska
+                  w Krakowie. Regularnie występuje na krakowskich scenach muzycznych, m.in. w Piwnicy pod Baranami
+                  czy Harris Piano Jazz Bar.
+                </p>
+              </div>
+            </div>
+            <div class="embed-stack">
+              <div class="embed">
+                <iframe
+                  title="YouTube — Dominika Guzek (przykładowe nagranie)"
+                  src="https://www.youtube.com/embed/wTDuCnb7gKI?rel=0"
+                  loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="embed-caption">
+                Więcej nagrań:
+                <a
+                  class="inline-link"
+                  href="https://www.youtube.com/playlist?list=PLQW_0funxmnTS4-sGJ62lPLkRXWXORd2a"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >playlista na YouTube</a
+                >.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <details class="disclosure">
+          <summary class="disclosure-summary">Sara Gawlik (Salia)</summary>
+          <div class="disclosure-body">
+            <div class="disclosure-split">
+              <figure class="media-placeholder">
+                <span>Zdjęcie — do dodania</span>
+              </figure>
+              <div class="disclosure-text">
+                <p>
+                  Aktorka i wokalistka; od kilkunastu lat współpracuje z Teatrem Proscenium. Występuje na scenach
+                  w Krakowie, w projektach zarówno muzycznych, jak i teatralnych, m.in. w Piwnicy pod Baranami,
+                  Klubie pod Jaszczurami czy Teatrze Odwróconym. Swój warsztat wokalny kształciła pod okiem wielu
+                  nauczycieli na warsztatach muzycznych oraz w Krakowskiej Szkole Jazzu i Muzyki Rozrywkowej.
+                </p>
+              </div>
+            </div>
+            <div class="embed-stack">
+              <div class="embed">
+                <iframe
+                  title="YouTube — Sara Gawlik / Salia (przykładowe nagranie)"
+                  src="https://www.youtube.com/embed/Yn-L-Kojqok?rel=0"
+                  loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="embed-caption">
+                Instagram duetu:
+                <a
+                  class="inline-link"
+                  href="https://www.instagram.com/salia_duoband/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >@salia_duoband</a
+                >.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <details class="disclosure">
+          <summary class="disclosure-summary">Anna Korbicz</summary>
+          <div class="disclosure-body">
+            <div class="disclosure-split">
+              <figure class="media-placeholder">
+                <span>Zdjęcie — do dodania</span>
+              </figure>
+              <div class="disclosure-text">
+                <p>
+                  Wokalistka jazzowa; obecnie kształci się na Wydziale Muzyki Uniwersytetu Rzeszowskiego.
+                  Poza muzyką rozrywkową czerpie inspiracje z ludowszczyzny oraz wchodzi w skład zespołu Serencza,
+                  który jest jednym z głównych wykonawców muzyki łemkowskiej.
+                </p>
+              </div>
+            </div>
+            <div class="embed-stack">
+              <div class="embed">
+                <iframe
+                  title="YouTube — Anna Korbicz (przykładowe nagranie)"
+                  src="https://www.youtube.com/embed/mGVI5SKot3A?rel=0"
+                  loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <p class="embed-caption">
+                <a
+                  class="inline-link"
+                  href="https://youtu.be/-IoPACWETws"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Zobacz medley na YouTube</a
+                >.
+              </p>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <!-- Głębokie linki: #repertuar | #repertuar-solo | #repertuar-duet | #repertuar-dominika | #repertuar-sara | #repertuar-ania | #repertuar-anna -->
+      <section class="flow-section" id="repertuar">
+        <h2>Repertuar</h2>
+        <p>
+          Wybierz zakładkę poniżej: <strong>Duet</strong> lub <strong>Solo</strong> i skorzystaj z filtrów.
+        </p>
+        <p>
+          Poniższy repertuar nie jest wyczerpujący - zawiera utwory, które były już wykonywane na żywo,
+          natomiast w przypadku specjalnych życzeń może zostać rozszerzony.
+        </p>
+
+        <div class="repertoire-shell">
+          <div class="repertoire-tabs" role="tablist" aria-label="Rodzaj repertuaru">
+            <button
+              type="button"
+              class="repertoire-tab"
+              role="tab"
+              id="repertoire-tab-duet"
+              aria-controls="repertoire-panel-duet"
+              aria-selected="true"
+            >
+              Duet
+            </button>
+            <button
+              type="button"
+              class="repertoire-tab"
+              role="tab"
+              id="repertoire-tab-solo"
+              aria-controls="repertoire-panel-solo"
+              aria-selected="false"
+            >
+              Solo
+            </button>
+          </div>
+
+          <div
+            class="repertoire-panel-duet"
+            id="repertoire-panel-duet"
+            role="tabpanel"
+            aria-labelledby="repertoire-tab-duet"
+          >
+            <div class="repertoire-filters">
+              <div class="repertoire-filter-row">
+                <span class="repertoire-filter-label">Wokalistka</span>
+                <p class="repertoire-filter-hint">Bez wyboru widać cały repertuar.</p>
+                <div class="repertoire-toggle-group" data-duet-filter="vocal">
+                  <button type="button" class="repertoire-toggle" data-value="Dominika" aria-pressed="false">
+                    Dominika
+                  </button>
+                  <button type="button" class="repertoire-toggle" data-value="Sara" aria-pressed="false">
+                    Sara
+                  </button>
+                  <button type="button" class="repertoire-toggle" data-value="Ania" aria-pressed="false">
+                    Ania
+                  </button>
+                </div>
+              </div>
+
+              <div class="repertoire-filter-row">
+                <span class="repertoire-filter-label">Język</span>
+                <div class="repertoire-toggle-group" data-duet-filter="lang">
+                  <button type="button" class="repertoire-toggle" data-key="PL" aria-pressed="true">
+                    Polskie
+                  </button>
+                  <button type="button" class="repertoire-toggle" data-key="EN" aria-pressed="true">
+                    Zagraniczne
+                  </button>
+                </div>
+              </div>
+
+              <div class="repertoire-filter-row">
+                <span class="repertoire-filter-label">Charakter</span>
+                <div class="repertoire-toggle-group" data-duet-filter="mood">
+                  <button type="button" class="repertoire-toggle" data-key="universal" aria-pressed="true">
+                    Uniwersalne
+                  </button>
+                  <button type="button" class="repertoire-toggle" data-key="xmas" aria-pressed="false">
+                    Świąteczne
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <input
+              type="search"
+              id="duet-repertoire-search"
+              class="repertoire-search"
+              placeholder="Szukaj po tytule lub artyście…"
+              autocomplete="off"
+              aria-label="Szukaj w repertuarze duetu po tytule lub artyście"
+            />
+
+            <p id="duet-repertoire-loading" class="repertoire-loading">Pobieranie repertuaru…</p>
+
+            <div class="table-scroll">
+              <table class="data-table" id="duet-repertoire-table" hidden>
+                <thead>
+                  <tr>
+                    <th scope="col">Tytuł</th>
+                    <th scope="col">Artysta</th>
+                  </tr>
+                </thead>
+                <tbody id="duet-repertoire-body"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div
+            class="repertoire-panel-solo"
+            id="repertoire-panel-solo"
+            role="tabpanel"
+            aria-labelledby="repertoire-tab-solo"
+            hidden
+          >
+            <input
+              type="search"
+              id="solo-repertoire-search"
+              class="repertoire-search"
+              placeholder="Szukaj po tytule, artyście lub pochodzeniu…"
+              autocomplete="off"
+              aria-label="Szukaj w repertuarze solowym"
+            />
+
+            <p id="solo-repertoire-loading" class="repertoire-loading">Pobieranie repertuaru…</p>
+
+            <div class="table-scroll">
+              <table class="data-table data-table--solo" id="solo-repertoire-table" hidden>
+                <thead>
+                  <tr>
+                    <th scope="col">Tytuł</th>
+                    <th scope="col">Artysta</th>
+                    <th scope="col">Skąd znane</th>
+                    <th scope="col">Nagranie</th>
+                  </tr>
+                </thead>
+                <tbody id="solo-repertoire-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer-text">
+        © 2026 Adam Szwajcowski ·
+        <a class="inline-link" href="../../kontakt/index.html">Kontakt</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const DUET_CSV_URL =
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vReh5S09MVyIzTJrv6Dx5vqcFoY1tcCZFTpjd9yyyqr1RLMVef7UWzbpjnMyV9Jb8JzTgUx8--EDsiK/pub?gid=1914338396&single=true&output=csv";
+      const SOLO_CSV_URL =
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vReh5S09MVyIzTJrv6Dx5vqcFoY1tcCZFTpjd9yyyqr1RLMVef7UWzbpjnMyV9Jb8JzTgUx8--EDsiK/pub?gid=1845498032&single=true&output=csv";
+
+      const tabDuet = document.getElementById("repertoire-tab-duet");
+      const tabSolo = document.getElementById("repertoire-tab-solo");
+      const panelDuet = document.getElementById("repertoire-panel-duet");
+      const panelSolo = document.getElementById("repertoire-panel-solo");
+
+      function switchRepertoireTab(which) {
+        const isDuet = which === "duet";
+        tabDuet.setAttribute("aria-selected", isDuet ? "true" : "false");
+        tabSolo.setAttribute("aria-selected", isDuet ? "false" : "true");
+        panelDuet.hidden = !isDuet;
+        panelSolo.hidden = isDuet;
+      }
+
+      tabDuet.addEventListener("click", function () {
+        switchRepertoireTab("duet");
+      });
+      tabSolo.addEventListener("click", function () {
+        switchRepertoireTab("solo");
+      });
+
+      const vocalGroup = document.querySelector('[data-duet-filter="vocal"]');
+      const langGroup = document.querySelector('[data-duet-filter="lang"]');
+      const moodGroup = document.querySelector('[data-duet-filter="mood"]');
+      const searchInput = document.getElementById("duet-repertoire-search");
+      const loadingEl = document.getElementById("duet-repertoire-loading");
+      const tableEl = document.getElementById("duet-repertoire-table");
+      const tbodyEl = document.getElementById("duet-repertoire-body");
+
+      const soloSearchInput = document.getElementById("solo-repertoire-search");
+      const soloLoadingEl = document.getElementById("solo-repertoire-loading");
+      const soloTableEl = document.getElementById("solo-repertoire-table");
+      const soloTbodyEl = document.getElementById("solo-repertoire-body");
+
+      let allSongs = [];
+      let soloSongs = [];
+
+      function getVocalSelection() {
+        const on = vocalGroup.querySelector('.repertoire-toggle[aria-pressed="true"]');
+        return on ? on.getAttribute("data-value") : null;
+      }
+
+      function setVocalFilter(vocalValue) {
+        vocalGroup.querySelectorAll(".repertoire-toggle").forEach(function (b) {
+          b.setAttribute("aria-pressed", "false");
+        });
+        if (vocalValue) {
+          const btn = vocalGroup.querySelector(
+            '.repertoire-toggle[data-value="' + vocalValue + '"]'
+          );
+          if (btn) btn.setAttribute("aria-pressed", "true");
+        }
+        renderDuetTable();
+      }
+
+      vocalGroup.addEventListener("click", function (e) {
+        const btn = e.target.closest(".repertoire-toggle");
+        if (!btn || !vocalGroup.contains(btn)) return;
+        const val = btn.getAttribute("data-value");
+        const current = getVocalSelection();
+        vocalGroup.querySelectorAll(".repertoire-toggle").forEach(function (b) {
+          b.setAttribute("aria-pressed", "false");
+        });
+        if (current !== val) {
+          btn.setAttribute("aria-pressed", "true");
+        }
+        renderDuetTable();
+      });
+
+      function scrollToRepertuarSection() {
+        const el = document.getElementById("repertuar");
+        if (!el) return;
+        const instant = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        el.scrollIntoView({ behavior: instant ? "auto" : "smooth", block: "start" });
+      }
+
+      function parseRepertuarHash() {
+        const raw = (location.hash || "").replace(/^#/, "").toLowerCase();
+        if (!raw) return null;
+        if (raw === "repertuar") return { scroll: true };
+        if (!raw.startsWith("repertuar-")) return null;
+        const slug = raw.slice("repertuar-".length);
+        if (slug === "solo") return { scroll: true, mode: "solo" };
+        if (slug === "duet") return { scroll: true, mode: "duet", vocal: null };
+        const vocalMap = {
+          dominika: "Dominika",
+          sara: "Sara",
+          ania: "Ania",
+          anna: "Ania",
+        };
+        if (vocalMap[slug]) return { scroll: true, mode: "duet", vocal: vocalMap[slug] };
+        return null;
+      }
+
+      function applyRepertuarHash() {
+        const parsed = parseRepertuarHash();
+        if (!parsed) return;
+        if (parsed.scroll) {
+          window.requestAnimationFrame(function () {
+            scrollToRepertuarSection();
+          });
+        }
+        if (parsed.mode === "solo") {
+          switchRepertoireTab("solo");
+        } else if (parsed.mode === "duet") {
+          switchRepertoireTab("duet");
+          setVocalFilter(parsed.vocal || null);
+        }
+      }
+
+      window.addEventListener("hashchange", applyRepertuarHash);
+      applyRepertuarHash();
+
+      langGroup.addEventListener("click", function (e) {
+        const btn = e.target.closest(".repertoire-toggle");
+        if (!btn || !langGroup.contains(btn)) return;
+        const pressed = btn.getAttribute("aria-pressed") === "true";
+        btn.setAttribute("aria-pressed", pressed ? "false" : "true");
+        renderDuetTable();
+      });
+
+      moodGroup.addEventListener("click", function (e) {
+        const btn = e.target.closest(".repertoire-toggle");
+        if (!btn || !moodGroup.contains(btn)) return;
+        const pressed = btn.getAttribute("aria-pressed") === "true";
+        btn.setAttribute("aria-pressed", pressed ? "false" : "true");
+        renderDuetTable();
+      });
+
+      searchInput.addEventListener("input", renderDuetTable);
+      soloSearchInput.addEventListener("input", renderSoloTable);
+
+      function processData(rawData) {
+        allSongs = rawData
+          .map(function (row) {
+            const vocalists = [];
+            ["Sara", "Dominika", "Ania"].forEach(function (voc) {
+              const cell = row[voc] ? String(row[voc]).trim() : "";
+              if (cell && cell !== "-") {
+                vocalists.push(voc);
+              }
+            });
+
+            const langRaw = row["język"] ? String(row["język"]).trim() : "";
+            const langs = langRaw ? langRaw.split("/").map(function (s) {
+              return s.trim();
+            }) : [];
+
+            const xmasRaw = row["🎄"] ? String(row["🎄"]).trim() : "0";
+            const isXmas = xmasRaw === "1";
+
+            return {
+              title: row["Tytuł"] ? String(row["Tytuł"]).trim() : "",
+              artist: row["Artysta"] ? String(row["Artysta"]).trim() : "",
+              langs: langs,
+              isXmas: isXmas,
+              vocalists: vocalists,
+            };
+          })
+          .filter(function (song) {
+            return song.title !== "";
+          });
+      }
+
+      function processSoloData(rawData) {
+        soloSongs = rawData
+          .map(function (row) {
+            const ytCell = row["YouTube"] ? String(row["YouTube"]).trim() : "";
+            const ytLink = ytCell && ytCell !== "-" ? ytCell : null;
+
+            return {
+              title: row["Tytuł"] ? String(row["Tytuł"]).trim() : "",
+              artist: row["Artysta"] ? String(row["Artysta"]).trim() : "",
+              origin: row["Skąd znane"] ? String(row["Skąd znane"]).trim() : "",
+              ytLink: ytLink,
+            };
+          })
+          .filter(function (song) {
+            return song.title !== "";
+          });
+      }
+
+      function renderSoloTable() {
+        const q = soloSearchInput.value.trim().toLowerCase();
+
+        const filtered = soloSongs.filter(function (song) {
+          if (!q) return true;
+          return (
+            song.title.toLowerCase().indexOf(q) !== -1 ||
+            song.artist.toLowerCase().indexOf(q) !== -1 ||
+            song.origin.toLowerCase().indexOf(q) !== -1
+          );
+        });
+
+        soloTbodyEl.textContent = "";
+        filtered.forEach(function (song) {
+          const tr = document.createElement("tr");
+
+          const tdTitle = document.createElement("td");
+          const strong = document.createElement("strong");
+          strong.textContent = song.title;
+          tdTitle.appendChild(strong);
+
+          const tdArtist = document.createElement("td");
+          tdArtist.textContent = song.artist;
+
+          const tdOrigin = document.createElement("td");
+          tdOrigin.className = "repertoire-origin";
+          tdOrigin.textContent = song.origin;
+
+          const tdRec = document.createElement("td");
+          if (song.ytLink) {
+            const a = document.createElement("a");
+            a.href = song.ytLink;
+            a.className = "repertoire-link-yt";
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
+            a.textContent = "▶ YouTube";
+            tdRec.appendChild(a);
+          }
+
+          tr.appendChild(tdTitle);
+          tr.appendChild(tdArtist);
+          tr.appendChild(tdOrigin);
+          tr.appendChild(tdRec);
+          soloTbodyEl.appendChild(tr);
+        });
+      }
+
+      function renderDuetTable() {
+        const voc = getVocalSelection();
+        const plOn = langGroup.querySelector('[data-key="PL"]').getAttribute("aria-pressed") === "true";
+        const enOn = langGroup.querySelector('[data-key="EN"]').getAttribute("aria-pressed") === "true";
+        const universalOn =
+          moodGroup.querySelector('[data-key="universal"]').getAttribute("aria-pressed") === "true";
+        const xmasOn = moodGroup.querySelector('[data-key="xmas"]').getAttribute("aria-pressed") === "true";
+
+        const q = searchInput.value.trim().toLowerCase();
+
+        const filtered = allSongs.filter(function (song) {
+          if (voc && song.vocalists.indexOf(voc) === -1) {
+            return false;
+          }
+
+          if (!plOn && !enOn) {
+            return false;
+          }
+          const langOk =
+            (plOn && song.langs.indexOf("PL") !== -1) || (enOn && song.langs.indexOf("EN") !== -1);
+          if (!langOk) {
+            return false;
+          }
+
+          if (!universalOn && !xmasOn) {
+            return false;
+          }
+          const moodOk =
+            (universalOn && !song.isXmas) || (xmasOn && song.isXmas);
+          if (!moodOk) {
+            return false;
+          }
+
+          if (q) {
+            const inTitle = song.title.toLowerCase().indexOf(q) !== -1;
+            const inArtist = song.artist.toLowerCase().indexOf(q) !== -1;
+            if (!inTitle && !inArtist) {
+              return false;
+            }
+          }
+
+          return true;
+        });
+
+        tbodyEl.textContent = "";
+        filtered.forEach(function (song) {
+          const tr = document.createElement("tr");
+          const tdT = document.createElement("td");
+          const tdA = document.createElement("td");
+          tdT.textContent = song.title;
+          tdA.textContent = song.artist;
+          tr.appendChild(tdT);
+          tr.appendChild(tdA);
+          tbodyEl.appendChild(tr);
+        });
+      }
+
+      if (typeof Papa === "undefined") {
+        loadingEl.textContent = "Nie udało się załadować modułu do odczytu tabeli. Odśwież stronę.";
+        soloLoadingEl.textContent = loadingEl.textContent;
+      } else {
+        Papa.parse(DUET_CSV_URL, {
+          download: true,
+          header: true,
+          skipEmptyLines: true,
+          complete: function (results) {
+            try {
+              processData(results.data);
+              loadingEl.style.display = "none";
+              tableEl.hidden = false;
+              renderDuetTable();
+            } catch (err) {
+              loadingEl.textContent = "Błąd podczas przetwarzania repertuaru.";
+              console.error(err);
+            }
+          },
+          error: function (err) {
+            loadingEl.textContent = "Wystąpił błąd podczas pobierania danych.";
+            console.error("Błąd PapaParse (duet):", err);
+          },
+        });
+
+        Papa.parse(SOLO_CSV_URL, {
+          download: true,
+          header: true,
+          skipEmptyLines: true,
+          complete: function (results) {
+            try {
+              processSoloData(results.data);
+              soloLoadingEl.style.display = "none";
+              soloTableEl.hidden = false;
+              renderSoloTable();
+            } catch (err) {
+              soloLoadingEl.textContent = "Błąd podczas przetwarzania repertuaru.";
+              console.error(err);
+            }
+          },
+          error: function (err) {
+            soloLoadingEl.textContent = "Wystąpił błąd podczas pobierania danych.";
+            console.error("Błąd PapaParse (solo):", err);
+          },
+        });
+      }
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var root = document.querySelector("[data-na-zywo-gallery]");
+      if (!root) return;
+
+      var slidesEl = document.getElementById("na-zywo-gallery-slides");
+      var prevBtn = root.querySelector(".na-zywo-gallery-nav--prev");
+      var nextBtn = root.querySelector(".na-zywo-gallery-nav--next");
+      var dots = root.querySelectorAll(".na-zywo-gallery-dot");
+      var total = dots.length;
+      var index = 0;
+      var autoplayMs = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 6000;
+      var timer = null;
+
+      function go(delta) {
+        index = (index + delta + total) % total;
+        sync();
+      }
+
+      function goTo(i) {
+        index = ((i % total) + total) % total;
+        sync();
+      }
+
+      function sync() {
+        slidesEl.style.transform = "translateX(-" + (index / total) * 100 + "%)";
+        dots.forEach(function (d, i) {
+          var on = i === index;
+          d.setAttribute("aria-selected", on ? "true" : "false");
+          d.tabIndex = on ? 0 : -1;
+        });
+      }
+
+      function startAutoplay() {
+        if (autoplayMs <= 0) return;
+        stopAutoplay();
+        timer = window.setInterval(function () {
+          go(1);
+        }, autoplayMs);
+      }
+
+      function stopAutoplay() {
+        if (timer) {
+          window.clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      prevBtn.addEventListener("click", function () {
+        go(-1);
+        stopAutoplay();
+        startAutoplay();
+      });
+      nextBtn.addEventListener("click", function () {
+        go(1);
+        stopAutoplay();
+        startAutoplay();
+      });
+
+      dots.forEach(function (dot, i) {
+        dot.addEventListener("click", function () {
+          goTo(i);
+          stopAutoplay();
+          startAutoplay();
+        });
+      });
+
+      root.addEventListener("mouseenter", stopAutoplay);
+      root.addEventListener("mouseleave", startAutoplay);
+      root.addEventListener("focusin", stopAutoplay);
+      root.addEventListener("focusout", function (e) {
+        if (!root.contains(e.relatedTarget)) startAutoplay();
+      });
+
+      root.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          go(-1);
+          stopAutoplay();
+          startAutoplay();
+        } else if (e.key === "ArrowRight") {
+          e.preventDefault();
+          go(1);
+          stopAutoplay();
+          startAutoplay();
+        }
+      });
+
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "hidden") stopAutoplay();
+        else startAutoplay();
+      });
+
+      sync();
+      startAutoplay();
+    })();
+  </script>
+</body>
+</html>
