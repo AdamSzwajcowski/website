@@ -719,6 +719,86 @@ h2 {
   line-height: 1.8;
 }
 
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 36px 56px;
+  align-items: start;
+}
+
+.contact-col h2 {
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.contact-details {
+  margin: 0;
+}
+
+.contact-detail + .contact-detail {
+  margin-top: 20px;
+}
+
+.contact-details dt {
+  margin: 0 0 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.contact-details dd {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.contact-details dd .inline-link {
+  font-weight: 600;
+}
+
+.contact-profiles {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-profile-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.contact-profiles li:first-child .contact-profile-link {
+  padding-top: 0;
+}
+
+.contact-profile-link::after {
+  content: "→";
+  color: var(--accent);
+  font-size: 0.95rem;
+  transition: transform 0.2s ease;
+}
+
+.contact-profile-link:hover {
+  color: var(--accent);
+}
+
+.contact-profile-link:hover::after {
+  transform: translateX(3px);
+}
+
 .it-page .content-box {
   border-color: rgba(47, 127, 122, 0.2);
   background: linear-gradient(180deg, #fffdf9 0%, #f7f3ec 100%);
@@ -933,56 +1013,66 @@ h2 {
   line-height: 1.5;
 }
 
-.it-subblocks {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+.it-job-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
-.it-subblock {
-  padding: 22px;
+.it-job-card {
+  padding: 30px;
   border-radius: 12px;
-  background: rgba(255, 253, 249, 0.85);
-  border: 1px solid rgba(47, 127, 122, 0.16);
+  background: #fff;
+  border: 1px solid var(--line);
 }
 
-.it-subblock h3 {
-  margin: 0 0 10px;
-  font-size: 1.05rem;
+.it-job-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.12rem;
   font-weight: 700;
   color: #2a6763;
+  letter-spacing: -0.01em;
 }
 
-.it-subblock p {
+.it-job-meta {
+  margin: 0 0 16px;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.it-job-desc {
+  margin: 0 0 18px;
+  color: var(--text-soft);
+  line-height: 1.85;
+}
+
+.it-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   margin: 0;
-  color: var(--text-soft);
-  line-height: 1.8;
+  padding: 0;
+  list-style: none;
 }
 
-.page-outro--it {
-  margin-top: 8px;
-  padding: 32px 28px;
-  border-radius: var(--radius);
-  border: 1px solid rgba(47, 127, 122, 0.22);
-  background: linear-gradient(145deg, rgba(47, 127, 122, 0.08), rgba(255, 253, 249, 0.95));
-  text-align: center;
+.it-tag {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 6px;
+  background: rgba(47, 127, 122, 0.12);
+  color: #2f7f7a;
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
-.it-cta-lead {
-  margin: 0 0 20px;
-  max-width: 42ch;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--text-soft);
-  line-height: 1.8;
-  font-size: 1.02rem;
-}
-
-.it-cta-actions {
+.it-section-cta {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
+  margin-top: 40px;
 }
 
 .btn-it-primary {
@@ -996,14 +1086,14 @@ h2 {
 }
 
 .btn-it-secondary {
-  background: rgba(255, 253, 249, 0.9);
-  color: var(--text);
-  border: 1px solid rgba(47, 127, 122, 0.35);
+  background: transparent;
+  color: var(--accent-it);
+  border: 1px solid rgba(47, 127, 122, 0.45);
 }
 
 .btn-it-secondary:hover {
-  border-color: rgba(47, 127, 122, 0.55);
-  background: #fffdf9;
+  border-color: rgba(47, 127, 122, 0.65);
+  background: rgba(47, 127, 122, 0.06);
 }
 
 .disclosure {
@@ -1457,7 +1547,8 @@ h2 {
     min-height: 280px;
   }
 
-  .disclosure-split {
+  .disclosure-split,
+  .contact-layout {
     grid-template-columns: 1fr;
   }
 
@@ -1472,8 +1563,7 @@ h2 {
     grid-template-columns: 1fr;
   }
 
-  .it-links:not(.it-links--two),
-  .it-subblocks {
+  .it-links:not(.it-links--two) {
     grid-template-columns: 1fr;
   }
 }
@@ -1507,16 +1597,16 @@ h2 {
     grid-template-columns: 1fr;
   }
 
-  .page-outro--it {
-    padding: 24px 20px;
+  .it-job-card {
+    padding: 22px;
   }
 
-  .it-cta-actions {
+  .it-section-cta {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .it-cta-actions .btn {
+  .it-section-cta .btn {
     width: 100%;
   }
 
