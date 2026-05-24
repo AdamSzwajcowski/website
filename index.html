@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adam Szwajcowski | Strona główna</title>
   <link rel="stylesheet" href="css/style.css" />
+  <script src="js/sierotki.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -13,21 +14,25 @@
         <a href="index.html">Adam Szwajcowski</a>
       </div>
       <nav class="main-nav">
-        <a href="muzyka/index.html">Muzyka</a>
-        <a href="it/index.html">Nauka i IT</a>
-        <a href="kontakt/index.html">Kontakt</a>
+        <a href="muzyka/index.html" class="nav-muzyka">Muzyka</a>
+        <a href="it/index.html" class="nav-it">Nauka i IT</a>
+        <a href="kontakt/index.html" class="nav-kontakt">Kontakt</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero hero-home">
+    <section class="hero hero-home page-dual-glow">
       <div class="container">
         <div class="hero-layout">
           <div class="hero-copy">
-            <p class="eyebrow">Muzyk • Kompozytor • Dr inż. • AI/IT</p>
+            <p class="eyebrow eyebrow-split">
+              <span class="e-muz">Muzyk · Kompozytor</span>
+              <span class="e-sep" aria-hidden="true">·</span>
+              <span class="e-it">Dr inż. · AI/IT</span>
+            </p>
             <h1>Adam Szwajcowski</h1>
-            <p class="lead">Działam równolegle w dwóch obszarach: muzyce oraz nauce i IT.</p>
+            <p class="hero-cta-prompt">Wybierz interesujący Cię obszar</p>
             <div class="hero-actions">
               <a class="btn btn-primary photo-switch-music" href="muzyka/index.html">Muzyka</a>
               <a class="btn btn-secondary photo-switch-it" href="it/index.html">Nauka i IT</a>

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adam Szwajcowski | Na żywo</title>
   <link rel="stylesheet" href="../../css/style.css" />
+  <script src="../../js/sierotki.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
   <script src="../../js/table-scroll-dual.js" defer></script>
 </head>
@@ -15,28 +16,32 @@
         <a href="../../index.html">Adam Szwajcowski</a>
       </div>
       <nav class="main-nav">
-        <a href="../index.html" class="active">Muzyka</a>
-        <a href="../../it/index.html">Nauka i IT</a>
-        <a href="../../kontakt/index.html">Kontakt</a>
+        <a href="../index.html" class="active nav-muzyka">Muzyka</a>
+        <a href="../../it/index.html" class="nav-it">Nauka i IT</a>
+        <a href="../../kontakt/index.html" class="nav-kontakt">Kontakt</a>
       </nav>
     </div>
   </header>
 
   <main class="page page-flow">
     <div class="container">
+      <section class="page-intro page-intro--tight page-intro--muzyka">
+        <h1>Muzyka na żywo</h1>
+        <p class="lead">
+          Występuję solo i w duetach na imprezach okolicznościowych<br />
+          oraz w lokalach z muzyką na żywo.
+        </p>
+      </section>
+
       <div class="music-story">
         <article class="music-story-block">
           <div class="music-story-copy">
-            <h1 class="music-story-title">Muzyka na żywo</h1>
-            <p class="lead">
+            <h2>Zakres usług</h2>
+            <p>
               Od kilku lat świadczę usługi muzyki na żywo. Obejmują one zarówno moją grę solową
               (zobacz zakładkę <a class="inline-link" href="../fingerstyle/index.html">Fingerstyle</a>),
               jak i występy w duetach akustycznych z wokalistkami. Akompaniuję głównie na gitarze, ale do krótszych
               występów możliwa jest również opcja występu z pianinem.
-            </p>
-            <p class="music-story-outro">
-              Po szczegóły dotyczące konkretnej oferty zapraszam do
-              <a class="inline-link" href="../../kontakt/index.html">kontaktu</a>.
             </p>
           </div>
           <figure class="music-story-media">
@@ -53,7 +58,7 @@
 
         <article class="music-story-block music-story-block--reverse">
           <div class="music-story-copy">
-            <h2>Zakres usług</h2>
+            <h2>Obsługiwane wydarzenia</h2>
             <p>
               Szeroki repertuar pozwala dopasować ofertę do różnych okazji, takich jak bankiety
               firmowe,
@@ -101,6 +106,61 @@
           </figure>
         </article>
       </div>
+
+      <section class="flow-section flow-section--spotlight" id="referencje">
+        <header class="section-spotlight">
+          <h2 class="section-spotlight-title">Referencje</h2>
+        </header>
+
+        <div class="refs">
+          <blockquote class="ref">
+            <p class="ref-quote">Adam już po raz drugi umilał nam czas swoją grą podczas naszego wydarzenia.
+              Bardzo profesjonalnie podejście do tematu, świetne wykonania i bezproblemowy kontakt.
+              Mamy nadzieję, że jeszcze dużo takich wieczorów przed nami!</p>
+            <cite class="ref-attribution">Mateusz Kaproń · Wydawnictwo INŻYNIERIA · 2025</cite>
+          </blockquote>
+
+          <blockquote class="ref">
+            <p class="ref-quote">Występy Salia Duoband od lat umilają atmosferę gościom naszego lokalu.
+              Połączenie subtelnego wokalu Sary i akustycznej gitary Adama tworzą niepowtarzalny nastrój,
+              który idealnie wpisuje się w kameralny klimat pubu Dobry Kumpel. Polecamy!</p>
+            <cite class="ref-attribution">Michał Pawełczak · Dobry Kumpel Pub · od 2020 roku</cite>
+          </blockquote>
+
+          <!-- <blockquote class="ref">
+            <p class="ref-quote">[Trzeci cytat]</p>
+            <cite class="ref-attribution">Imię Nazwisko · Okazja · Rok</cite>
+          </blockquote> -->
+
+          <blockquote class="ref ref--company">
+            <p class="ref-quote">Niniejszym mamy przyjemność udzielić referencji duetowi muzycznem, w skład
+              którego wchodzą gitarzysta Adam oraz wokalistka Dominika, za profesjonalne przygotowanie i wykonywanie
+              oprawy muzycznej podczas spotkań okolicznościowych organizowanych na potrzeby naszej Spółki.
+              (...) Artyści wykazują się nie tylko wysokim poziomem muzycznym i starannie dobranym repertuarem,
+              ale również pełnym profesjonalizmem w komunikacji i elastycznością w dopasowaniu się do charakteru imprezy.
+            </p>
+            <footer class="ref-footer">
+              <cite class="ref-attribution">Daiel Łata · Nowrem Group · 2025</cite>
+              <a class="ref-doc-link" href="/sciezka/do/pdf" target="_blank" rel="noopener noreferrer">Pobierz pełną referencję (PDF) →</a>
+            </footer>
+          </blockquote>
+        </div>
+
+        <p class="refs-more">
+          Opinie dotyczące branży ślubnej dostępne na
+          <a
+            class="inline-link"
+            href="https://www.weselezklasa.pl/ogloszenia-weselne/adam-szwajcowski,58624/#opinie"
+            target="_blank"
+            rel="noopener noreferrer"
+          >weselezklasa.pl</a>.
+        </p>
+      </section>
+
+      <aside class="section-cta" aria-label="Zapytanie o ofertę">
+        <p class="section-cta-prompt">Interesuje Cię konkretne wydarzenie?</p>
+        <a class="btn btn-primary" href="../../kontakt/index.html">Napisz w sprawie oferty</a>
+      </aside>
 
       <section class="flow-section flow-section--spotlight">
         <header class="section-spotlight">
@@ -618,7 +678,7 @@
             a.className = "repertoire-link-yt";
             a.target = "_blank";
             a.rel = "noopener noreferrer";
-            a.textContent = "▶ YouTube";
+            a.innerHTML = '<span class="repertoire-link-icon-arrow" aria-hidden="true">▶</span><span>YouTube</span>';
             tdRec.appendChild(a);
           }
 

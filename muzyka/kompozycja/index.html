@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Adam Szwajcowski | Kompozycja</title>
   <link rel="stylesheet" href="../../css/style.css" />
+  <script src="../../js/sierotki.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -13,44 +14,45 @@
         <a href="../../index.html">Adam Szwajcowski</a>
       </div>
       <nav class="main-nav">
-        <a href="../muzyka/index.html" class="active">Muzyka</a>
-        <a href="../../it/index.html">Nauka i IT</a>
-        <a href="../../kontakt/index.html">Kontakt</a>
+        <a href="../index.html" class="active nav-muzyka">Muzyka</a>
+        <a href="../../it/index.html" class="nav-it">Nauka i IT</a>
+        <a href="../../kontakt/index.html" class="nav-kontakt">Kontakt</a>
       </nav>
     </div>
   </header>
 
   <main class="page page-flow">
     <div class="container">
-      <header class="section-spotlight section-spotlight--page">
-        <h1 class="section-spotlight-title">Kompozycja</h1>
-      </header>
+      <section class="page-intro page-intro--tight page-intro--muzyka">
+        <h1>Kompozycja</h1>
+        <p class="lead">
+          Tworzę muzykę na zamówienie, zarówno do wykonań na żywo jak i w formie gotowych ścieżek czy podkładów.
+        </p>
+      </section>
 
       <div class="music-story">
         <article class="music-story-block">
           <div class="music-story-copy">
             <h2>Piosenki i muzyka teatralna</h2>
-            <p class="lead">
+            <p>
               Specjalizuję się w kompozycji muzyki teatralnej, a szczególnie bliska jest mi forma piosenek —
               w ostatnich latach napisałem ich ponad 70, głównie na potrzeby spektakli. W razie zainteresowania
               usługami zapraszam do
               <a class="inline-link" href="../../kontakt/index.html">kontaktu</a>
               — udostępnię wówczas demo spersonalizowane pod charakter planowanego dzieła.
             </p>
-            <a class="music-story-link" href="#realizacje">Zobacz wybrane realizacje</a>
+            <a class="music-story-link music-story-link--scroll" href="#realizacje">Zobacz wybrane realizacje</a>
           </div>
-          <div class="music-story-media">
-            <div class="embed">
-              <iframe
-                title="YouTube — kompozycja teatralna (przykład)"
-                src="https://www.youtube.com/embed/_nHk34Tmz2Q?rel=0"
-                loading="lazy"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
+          <figure class="music-story-media music-story-media--portrait">
+            <img
+              src="../../assets/proscenium2020.jpg"
+              alt="Kompozycja — muzyka teatralna"
+              width="560"
+              height="700"
+              decoding="async"
+              loading="lazy"
+            />
+          </figure>
         </article>
 
         <article class="music-story-block music-story-block--reverse">
@@ -129,7 +131,9 @@
                   <div class="work-item-main">
                     <p class="work-title">„Tam, gdzie umierają sny”</p>
                     <p class="work-meta">
-                      Teatr Dysonans · reż. Erazm Cesarz · premiera 15.09.2024
+                      Teatr Dysonans<br />
+                      reż. Erazm Cesarz<br />
+                      premiera 15.09.2024
                     </p>
                     <p class="work-desc">
                       Spektakl-koncert z muzyką na żywo: kompozycja, aranżacja i kierownictwo muzyczne
@@ -162,7 +166,9 @@
                   <div class="work-item-main">
                     <p class="work-title">„Powłoki”</p>
                     <p class="work-meta">
-                      Stowarzyszenie Teatrów Nieinstytucjonalnych · reż. Piotr Majewski · premiera 29.12.2023
+                      Stowarzyszenie Teatrów Nieinstytucjonalnych<br />
+                      reż. Piotr Majewski<br />
+                      premiera 29.12.2023
                     </p>
                     <p class="work-desc">
                       Muzyka do futurystycznego spektaklu oparta na syntezatorach i mocno inspirowana
@@ -195,7 +201,9 @@
                   <div class="work-item-main">
                     <p class="work-title">„Pożądliwość krótka jak lato”</p>
                     <p class="work-meta">
-                      Stowarzyszenie Teatrów Nieinstytucjonalnych · reż. Katarzyna Deszcz · premiera 28.07.2021
+                      Stowarzyszenie Teatrów Nieinstytucjonalnych<br />
+                      reż. Katarzyna Deszcz<br />
+                      premiera 28.07.2021
                     </p>
                     <p class="work-desc">
                       Półimprowizowana muzyka na żywo (gitara, mandolina, flet, klarnet) stworzona we współpracy
@@ -219,7 +227,9 @@
                   <div class="work-item-main">
                     <p class="work-title">„Teatralny Hyde Park: Zielona Gęś”</p>
                     <p class="work-meta">
-                      Teatr Proscenium · reż. Ziuta Zającówna · premiera 20.12.2020
+                      Teatr Proscenium<br />
+                      reż. Ziuta Zającówna<br />
+                      premiera 20.12.2020
                     </p>
                     <p class="work-desc">
                       Skomponowanie muzyki i akompaniament na gitarze klasycznej do sześciu piosenek opartych
@@ -251,7 +261,9 @@
                   <div class="work-item-main">
                     <p class="work-title">Seria spektakli muzyczno-edukacyjnych</p>
                     <p class="work-meta">
-                      Teatr Pompon Maleńki · reż. Anna Dzierża · 7 spektakli od 2024
+                      Teatr Pompon Maleńki<br />
+                      reż. Anna Dzierża<br />
+                      7 spektakli od 2024
                     </p>
                     <p class="work-desc">
                       Spektakle wystawiane w żłobkach i przedszkolach. Chwytliwa muzyka
@@ -305,7 +317,9 @@
                   <div class="work-item-main">
                     <p class="work-title">„Detektyw Pozytywka”</p>
                     <p class="work-meta">
-                      Teatr Groteska · reż. Katarzyna Deszcz · premiera 5.02.2022
+                      Teatr Groteska<br />
+                      reż. Katarzyna Deszcz<br />
+                      premiera 5.02.2022
                     </p>
                     <p class="work-desc">
                       Kameralna muzyka ilustracyjna wykorzystująca sample akustycznych instrumentów
@@ -336,6 +350,13 @@
             </ul>
         </div>
       </section>
+    </div>
+
+    <div class="container">
+      <aside class="section-cta" aria-label="Zapytanie o kompozycję">
+        <p class="section-cta-prompt">Planujesz spektakl z muzyką oryginalną?</p>
+        <a class="btn btn-primary" href="../../kontakt/index.html">Napisz w sprawie kompozycji</a>
+      </aside>
     </div>
   </main>
 
