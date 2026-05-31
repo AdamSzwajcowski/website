@@ -1378,19 +1378,18 @@ p:last-child { margin-bottom: 0; }
 /* Link cards (ORCiD, ResearchGate) */
 .it-links {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 14px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.it-links--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
 .it-link-card {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 14px;
+  column-gap: 14px;
   padding: 22px 26px;
   background: var(--paper);
   border: 1px solid var(--rule-soft);
@@ -1404,14 +1403,18 @@ p:last-child { margin-bottom: 0; }
 }
 .it-link-card::after {
   content: "↗";
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
   color: var(--accent);
   font-size: 1.1rem;
   transition: transform 0.3s ease;
-  flex-shrink: 0;
 }
 .it-link-card:hover::after { transform: translate(2px, -2px); }
 
 .it-link-card > .it-link-name {
+  grid-column: 1;
+  grid-row: 1;
   font-family: var(--serif);
   font-size: 1.4rem;
   font-weight: 500;
@@ -1419,12 +1422,15 @@ p:last-child { margin-bottom: 0; }
 }
 
 .it-link-card > .it-link-hint {
+  grid-column: 1;
+  grid-row: 2;
   display: block;
   margin-top: 4px;
   font-size: 11px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--ink-softer);
+  white-space: nowrap;
 }
 
 /* Job cards (Outlier, Liger) */
@@ -1898,8 +1904,6 @@ p:last-child { margin-bottom: 0; }
   .it-stats {
     grid-template-columns: 1fr;
   }
-
-  .it-links:not(.it-links--two) { grid-template-columns: 1fr; }
 
   .two-columns,
   .three-columns { grid-template-columns: 1fr; }
