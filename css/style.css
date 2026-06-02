@@ -230,6 +230,7 @@ p:last-child { margin-bottom: 0; }
 
 .main-nav {
   display: flex;
+  align-items: center;
   gap: 36px;
   flex-wrap: wrap;
 }
@@ -272,6 +273,36 @@ p:last-child { margin-bottom: 0; }
 .main-nav a.nav-muzyka::after { background: var(--accent-music); }
 .main-nav a.nav-it::after     { background: var(--accent-it); }
 /* Kontakt — default neutral grey, no override */
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 20px;
+  margin-left: 4px;
+  padding: 0;
+  border: 1px solid var(--rule-soft);
+  border-radius: 3px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.lang-switch::after {
+  display: none;
+}
+
+.lang-switch:hover {
+  border-color: var(--ink-softer);
+  box-shadow: 0 1px 4px rgba(26, 22, 18, 0.08);
+}
+
+.lang-switch__icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 
 /* ---------- Footer ---------- */
 .site-footer {

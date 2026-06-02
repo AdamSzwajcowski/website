@@ -1,65 +1,105 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Adam Szwajcowski | Strona główna</title>
-  <link rel="alternate" hreflang="pl" href="https://adamszwajcowski.com/" />
-  <link rel="alternate" hreflang="en" href="https://adamszwajcowski.com/en/" />
-  <link rel="stylesheet" href="css/style.css" />
-  <script src="js/sierotki.js" defer></script>
-  <script src="js/lang-switch.js" defer></script>
+  <title>Adam Szwajcowski | Music</title>
+  <link rel="alternate" hreflang="pl" href="https://adamszwajcowski.com/muzyka/" />
+  <link rel="alternate" hreflang="en" href="https://adamszwajcowski.com/en/music/" />
+  <link rel="stylesheet" href="../../css/style.css" />
+  <script src="../../js/lang-switch.js" defer></script>
 </head>
 <body>
   <header class="site-header">
     <div class="container">
       <div class="logo">
-        <a href="index.html">Adam Szwajcowski</a>
+        <a href="../index.html">Adam Szwajcowski</a>
       </div>
       <nav class="main-nav">
-        <a href="muzyka/index.html" class="nav-muzyka">Muzyka</a>
-        <a href="it/index.html" class="nav-it">Nauka i IT</a>
-        <a href="kontakt/index.html" class="nav-kontakt">Kontakt</a>
-        <a href="#" class="lang-switch" data-lang-switch aria-label="Switch to English" title="English">
-          <svg class="lang-switch__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" aria-hidden="true">
-            <rect width="60" height="30" fill="#012169"/>
-            <path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/>
-            <path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="3"/>
-            <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
-            <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
+        <a href="index.html" class="active nav-muzyka">Music</a>
+        <a href="../it/index.html" class="nav-it">Research &amp; IT</a>
+        <a href="../contact/index.html" class="nav-kontakt">Contact</a>
+        <a href="#" class="lang-switch" data-lang-switch aria-label="Przełącz na polski" title="Polski">
+          <svg class="lang-switch__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 10" aria-hidden="true">
+            <rect width="16" height="5" fill="#fff"/>
+            <rect y="5" width="16" height="5" fill="#dc143c"/>
           </svg>
         </a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero hero-home page-dual-glow">
-      <div class="container">
-        <div class="hero-layout">
-          <div class="hero-copy">
-            <p class="eyebrow eyebrow-split">
-              <span class="e-muz">Muzyk · Kompozytor</span>
-              <span class="e-sep" aria-hidden="true">·</span>
-              <span class="e-it">Dr inż. · AI/IT</span>
+  <main class="page page-flow">
+    <div class="container">
+      <section class="page-intro page-intro--tight page-intro--muzyka">
+        <h1>Music</h1>
+        <p class="lead">
+          I work with music in many ways — from composition and arranging to performing live.
+        </p>
+      </section>
+
+      <div class="music-story">
+        <article class="music-story-block music-story-block--hub">
+          <div class="music-story-copy">
+            <h2>Live</h2>
+            <p>
+              I perform as a soloist and in duos at private events, with regular residencies at hotels and restaurants.
             </p>
-            <h1>Adam Szwajcowski</h1>
-            <p class="hero-cta-prompt">Wybierz interesujący Cię obszar</p>
-            <div class="hero-actions">
-              <a class="btn btn-primary photo-switch-music" href="muzyka/index.html">Muzyka</a>
-              <a class="btn btn-secondary photo-switch-it" href="it/index.html">Nauka i IT</a>
-            </div>
+            <a class="music-story-link" href="live/index.html">View live music services</a>
           </div>
+          <figure class="music-story-media">
+            <img
+              src="../../assets/foty/muzyka/hub/na-zywo.jpg"
+              alt="Live music — photo"
+              width="900"
+              height="675"
+              decoding="async"
+              fetchpriority="high"
+            />
+          </figure>
+        </article>
 
-          <aside class="hero-photo-placeholder" aria-label="Zdjęcie profilowe">
-            <img class="hero-photo photo-default" src="assets/foty/hero/profil.jpg" alt="Zdjęcie profilowe" />
-            <img class="hero-photo photo-music" src="assets/foty/hero/muzyka.jpg" alt="Zdjęcie związane z muzyką" />
-            <img class="hero-photo photo-it" src="assets/foty/hero/it.jpg" alt="Zdjęcie związane z nauką i IT" />
-          </aside>
-        </div>
+        <article class="music-story-block music-story-block--reverse music-story-block--hub">
+          <div class="music-story-copy">
+            <h2>Composition</h2>
+            <p>
+              I write songs and compose instrumental pieces, mainly for theatre productions.
+            </p>
+            <a class="music-story-link" href="composition/index.html">See selected works</a>
+          </div>
+          <figure class="music-story-media">
+            <img
+              src="../../assets/foty/muzyka/hub/kompozycja.jpg"
+              alt="Composition — photo"
+              width="900"
+              height="675"
+              decoding="async"
+              loading="lazy"
+            />
+          </figure>
+        </article>
+
+        <article class="music-story-block music-story-block--hub">
+          <div class="music-story-copy">
+            <h2>Fingerstyle</h2>
+            <p>
+              I arrange well-known songs for solo guitar, record them, and post them on my YouTube channel. The videos have already gathered hundreds of thousands of views.
+            </p>
+            <a class="music-story-link" href="fingerstyle/index.html">Browse pieces and sheet music</a>
+          </div>
+          <figure class="music-story-media">
+            <img
+              src="../../assets/foty/muzyka/hub/fingerstyle.jpg"
+              alt="Fingerstyle — photo"
+              width="900"
+              height="675"
+              decoding="async"
+              loading="lazy"
+            />
+          </figure>
+        </article>
       </div>
-    </section>
-
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -67,9 +107,9 @@
       <div class="site-footer-inner">
         <span class="site-footer-text">© 2026 Adam Szwajcowski</span>
         <span class="site-footer-separator" aria-hidden="true">·</span>
-        <a class="inline-link site-footer-link" href="kontakt/index.html">Kontakt</a>
+        <a class="inline-link site-footer-link" href="../contact/index.html">Contact</a>
         <span class="site-footer-separator" aria-hidden="true">·</span>
-        <ul class="site-footer-social" aria-label="Profile w mediach społecznościowych">
+        <ul class="site-footer-social" aria-label="Social media profiles">
           <li>
             <a href="https://www.youtube.com/@adamszwajcowski" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
               <svg class="site-footer-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
