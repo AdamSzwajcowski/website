@@ -16,6 +16,7 @@
   --ink-softer: #95897a;
   --rule: #d8caaf;
   --rule-soft: #e7ddc4;
+  --frame: #d0c9bf;
 
   --accent-music: #b87333;
   --accent-it:    #2f7f7a;
@@ -499,6 +500,75 @@ p:last-child { margin-bottom: 0; }
 .hero-layout:has(.photo-switch-it:hover) .hero-photo.photo-default { opacity: 0; }
 .hero-layout:has(.photo-switch-it:hover) .hero-photo.photo-it { opacity: 1; }
 
+/* Photo frames — border on container, not on img/embed */
+.hero-photo-placeholder,
+figure.music-story-media,
+.work-item-photo {
+  border: 1px solid var(--frame);
+}
+
+/* Homepage — fit header + hero + footer in one desktop viewport */
+@media (min-width: 901px) {
+  body:has(.hero-home) {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+  }
+
+  body:has(.hero-home) > main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    min-height: 0;
+  }
+
+  body:has(.hero-home) .hero-home {
+    width: 100%;
+    padding-block: clamp(8px, 1.2dvh, 16px);
+  }
+
+  body:has(.hero-home) .hero-layout {
+    grid-template-columns: max-content auto;
+    justify-content: center;
+    gap: clamp(32px, 3vw, 48px);
+    align-items: center;
+  }
+
+  body:has(.hero-home) .hero-copy {
+    max-width: 480px;
+  }
+
+  body:has(.hero-home) .hero-copy .eyebrow {
+    margin-bottom: clamp(12px, 1.8dvh, 20px);
+  }
+
+  body:has(.hero-home) .hero-copy h1 {
+    font-size: clamp(2.6rem, 6dvh, 5.6rem);
+    margin-bottom: clamp(14px, 2dvh, 24px);
+  }
+
+  body:has(.hero-home) .hero-cta-prompt {
+    margin-top: clamp(14px, 2dvh, 24px);
+    font-size: clamp(16px, 1.7dvh, 19px);
+  }
+
+  body:has(.hero-home) .hero-actions {
+    margin-top: clamp(10px, 1.5dvh, 16px);
+  }
+
+  body:has(.hero-home) .hero-photo-placeholder {
+    min-height: 0;
+    height: clamp(320px, calc(100dvh - 13rem), 600px);
+    width: auto;
+    max-width: 100%;
+  }
+
+  body:has(.hero-home) .site-footer {
+    margin-top: 0;
+    padding-block: clamp(16px, 2dvh, 28px);
+  }
+}
+
 /* ---------- References ---------- */
 .refs {
   display: flex;
@@ -852,6 +922,7 @@ p:last-child { margin-bottom: 0; }
 .music-story-link--scroll:hover::after { transform: translateY(4px); }
 
 .music-story-media { margin: 0; }
+
 .music-story-media img,
 .music-story-placeholder {
   display: block;
@@ -861,8 +932,28 @@ p:last-child { margin-bottom: 0; }
   filter: saturate(0.96);
   box-shadow: var(--shadow-soft);
 }
+.music-story-media--portrait {
+  overflow: hidden;
+  width: min(100%, 400px);
+  aspect-ratio: 3 / 4;
+  justify-self: end;
+}
 .music-story-media--portrait img {
-  aspect-ratio: 7 / 10;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: unset;
+  object-fit: cover;
+  object-position: center 68%;
+}
+
+/* Hub /muzyka/ — szersze kadry landscape (podstrony bez zmian) */
+.music-story--hub figure.music-story-media {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+.music-story--hub figure.music-story-media img {
+  height: 100%;
+  aspect-ratio: unset;
 }
 
 .music-story-placeholder {
@@ -1951,6 +2042,11 @@ p:last-child { margin-bottom: 0; }
   .music-story-block--reverse .music-story-media { order: unset; }
   .music-story-copy { order: 1; }
   .music-story-media { order: 2; }
+
+  .music-story-media--portrait {
+    width: 100%;
+    justify-self: stretch;
+  }
 
   .work-item-layout {
     grid-template-columns: 1fr;
